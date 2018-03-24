@@ -8,7 +8,7 @@ def lambda_handler(event, context):
     topic = sns.Topic('arn:aws:sns:us-west-2:647579903866:portfolio-deployPortfolio-topic')
 
     # Follwing code is executed when run this program manually
-    location : {
+    location = {
         "bucketName" : 'portfoliobuild.sergiogtz.info',
         "objectKey" : 'portfoliobuild.zip'
     }
@@ -22,10 +22,11 @@ def lambda_handler(event, context):
         # has been activated
         if job:
             for artifact in job["data"]["inputArtifacts"]:
-                if artifact["name"] == "MyBuildApp"
-                    location == artifact["locatio"]["s3Location"]
+                if artifact["name"] == "MyBuildApp":
+                    location == artifact["location"]["s3Location"]
 
-        print("Building portfolio from: " + str[location])
+        print("Building portfolio from: " )
+        print(str(location))
 
         portfolio_bucket = s3.Bucket('portfolio.sergiogtz.info')
         build_bucket = s3.Bucket(location["bucketName"])
