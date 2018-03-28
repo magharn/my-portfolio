@@ -1,9 +1,11 @@
-version: 0.1
+version: 0.2
 
 phases:
-  build:
+  install:
     commands:
       - npm install
+  build:
+    commands:
       - npm run webpack
 artifacts:
   files:
@@ -13,3 +15,4 @@ artifacts:
     - styles/main.css
     - images/*
     - dist/bundle.js
+    - js/main.js
