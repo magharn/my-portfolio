@@ -18,12 +18,14 @@ def lambda_handler(event, context):
 
         job = event.get("CodePipeline.job")
 
+        print('This is the job: ')
+        print(type(job))
+        print(str(job))
+
         # Follwing if statment executes code when CodePipeline
         # has been activated
-        if job:
-            for artifact in job["data"]["inputArtifacts"]:
-                if artifact["name"] == "MyBuildApp":
-                    location == artifact["location"]["s3Location"]
+        if job and 	len(job['data']['inputArtifacts']) > 0 :
+        	location = (job['data']['inputArtifacts'])[0]['location']['s3Location']
 
         print("Building portfolio from: " )
         print(str(location))
