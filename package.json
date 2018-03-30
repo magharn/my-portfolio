@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-watch" : "jest --watch",
     "webpack": "webpack --mode development",
     "webpack-prod": "webpack --mode production",
     "webpack-watch": "webpack --watch --mode development"
